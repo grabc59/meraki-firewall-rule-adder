@@ -43,8 +43,9 @@ if f.mode == "r":
             'srcCidr': 'any',
             'syslogEnabled': False
         })
-    meraki.updatemxl3fwrules(
-        apikey, network_id, rules_list)
+    # run the update rules call. Wrapped in print to show any errors returned.
+    print(meraki.updatemxl3fwrules(
+        apikey, network_id, rules_list))
 
 # fwrules = [{'comment': 'A note about the rule', 'policy': 'deny',
 # 'protocol': 'tcp', 'destPort': '80,443', 'destCidr':
